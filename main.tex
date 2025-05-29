@@ -1,6 +1,18 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
-\usepackage{amssymb} % For \mathbb
+\usepackage{amsmath, amssymb, stmaryrd, verbatim} % math symbols
+\usepackage{hyperref,nameref,cleveref,enumitem} % for references, hyperlinks
+\usepackage[dvipsnames]{xcolor} % Fancy Colours
+\usepackage{mathrsfs} % Fancy font
+\usepackage{bbm} % mathbb numerals
+\usepackage{tikz, tikz-cd, float} % Commutative Diagrams
+\usepackage{perpage}
+\usepackage{parskip} % So that paragraphs look nice
+\usepackage{ifthen,xargs} % For defining better commands
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tgpagella}
+\usepackage{cancel}
 
 \title{Plan for analytic stacks project}
 \author{Various authors}
@@ -11,54 +23,137 @@
 \maketitle
 
 \begin{enumerate}
-    \item Light condensed sets
+    \item Light condensed mathematics
     \begin{enumerate}
-        \item Equivalence of light profinite sets,
-        metrizable totally disconnected compact Hausdorff,
-        and countable Boolean algebras.
-        \item Light profinite sets has countable limits.
-        \item Non-empty light profinite sets are injective objects in profinite sets.
-        \item Profinite set is light iff admits surjection from Cantor set.
-        \item Functor from topological spaces to light condensed sets induces : 
+        \item Light condensed sets
         \begin{enumerate}
+          \item Equivalence of light profinite sets,
+          metrizable totally disconnected compact Hausdorff,
+          and countable Boolean algebras.
+          \item Light profinite sets has countable limits.
+          \item Non-empty light profinite sets are injective objects in profinite sets.
+          \item Profinite set is light iff admits surjection from Cantor set.
+          \item Functor from topological spaces to light condensed sets induces : 
+          \begin{enumerate}
             \item equivalence on qcqs objects and metrizable compact Hausdorff spaces
             \item equivalence on qs objects and monomorphic ind-completion of
             metrizable compact Hausdorff spaces.
+          \end{enumerate}
         \end{enumerate}
-    \end{enumerate}
-    \item Light condensed abelian groups
-    \begin{enumerate}
-        \item Grothendieck abelian
-        \item closed symmetric monoidal
-        \item Free functor, symmetric monoidal
-        \item Countable products exact
-        \item Sequential limits along surjections have surjective projections
-        \item Free light condensed abelian group on convergent sequence
-        is internally projective.
-        \item Prove or disprove : Free light condensed abelian group
-        on Cantor set is projective.
+        \item Light condensed abelian groups
+        \begin{enumerate}
+          \item Grothendieck abelian
+          \item closed symmetric monoidal
+          \item Free functor, symmetric monoidal
+          \item Countable products exact
+          \item Sequential limits along surjections have surjective projections
+          \item Free light condensed abelian group on convergent sequence
+          is internally projective.
+          \item Prove or disprove : Free light condensed abelian group
+          on Cantor set is projective.
+          \item $D(\mathrm{Cond}_{\mathbb{N}} \mathrm{Ab}) \simeq 
+        \mathrm{Cond}^\wedge_{\mathbb{N}} D(\mathbb{Z})$
+          \item Comparison with singular cohomology
+        \end{enumerate}
     \end{enumerate}
     \item Analytic rings
     \begin{enumerate}
-        \item $D(\mathrm{Cond}_{\mathbb{N}} \mathrm{Ab}) \simeq 
-        \mathrm{Cond}^\wedge_{\mathbb{N}} D(\mathbb{Z})$
         \item Light condensed animated rings
         \item Underived pre-analytic structure on a light condensed animated ring.
         Also derived version.
-        \item Bijection between underived and derived pre-analytic structure
+        \item Bijection between underived and derived pre-analytic structures
         \item $\infty$-category of pre-analytic rings has small colimits
+        \item analytic rings closed under small sifted colimits
         \item Left adjoint to inclusion of
         analytic rings to pre-analytic rings. 
+        Hence analytic rings has all small colimits.
         \begin{enumerate}
             \item Frobenius
-            \item 
+            \item Completed symmetric powers
         \end{enumerate}
     \end{enumerate}
-    \item Non-Archimedean theory
+    \item Affine theory of non-Archimedean geometry
     \begin{enumerate}
-        \item Solid groups
-        \item Solid gives a non-trivial analytic structure on integers.
+        \item Solid abelian groups
+        \begin{enumerate}
+            \item Solid groups
+            \item Solid gives a non-trivial analytic structure on integers.
+            \item Computation of left derived functor of solidification on free objects.
+            \item $\mathcal{N}$ is compact projective generator
+            for the abelian category of solid modules.
+            \item $D(\mathrm{Solid}) \to D(\mathrm{Cond}_{\mathbb{N}} \mathrm{Ab})$
+            is fully faithful.
+        \end{enumerate}
+        \item Huber pairs
+        \begin{enumerate}
+            \item The analytic ring $\mathbb{Z}[T]_\square$
+            \item Given analytic ring $A$ over $\mathbb{Z}_\square$,
+            define $A^\circ, A^{\circ\circ} , A^+$
+            \item Solid affinoid rings (induced morphism $(A^\triangleright , A^+)_\square \to A$ is an equivalence)
+            \item Given a complete Huber ring $A$, adjunction
+            between integrally closed subrings $A^+ \subseteq A^\circ$ and
+            solid affinoid analytic structures on $A$ as a light condensed ring
+            \item Example : $(\mathbb{Z}_p , \mathbb{Z}_p)_\square
+            = (\mathbb{Z}_p , \mathbb{Z})_\square \simeq \varprojlim_{n \geq 0} (\mathbb{Z} / p^n , \mathbb{Z})_\square$
+            \item Fully faithful functor from complete Huber pairs
+            to solid affinoid rings
+            \item Tensor product of Tate algebras over $\mathbb{Q}_p$ as analytic rings
+        \end{enumerate}
+        \item Analytic descent of vector bundles, perfect complexes,
+        pseudo-coherent complexes, nuclear objects, compact objects.
+        (Andrychev stuff)
+        \begin{enumerate}
+            \item complete Huber pair is sheafy iff derived structure sheaf is static.
+        \end{enumerate}
     \end{enumerate}
+    \item Affine theory of complex geometry
+    \begin{enumerate}
+        \item Gaseous theory 
+        \item Liquid theory?
+    \end{enumerate}
+    \item Analytic stacks
+    \begin{enumerate}
+        \item Six functor formalisms
+        \item !-topology
+        \begin{enumerate}
+            \item Locale of idempotent algebras for any
+            presentable, closed symmetric monoidal, stable $\infty$-category.
+            Categorical open immersion, categorical closed immersion.
+            \item Proper morphism of affines.
+            Iff induced analytic structure
+            \item Open immersion of affines.
+            \item Canonical factorization of any morphism of affines.
+            Notion of !-able morphisms.
+            \item !-covers. Lemma for giving !-covers in practice.
+            \item Open immersion, proper morphisms, !-able morphisms
+            satisfy the theorem for constructing six functor formalisms.
+            \item Definition of analytic stacks
+        \end{enumerate}
+        \item Examples of analytic stacks
+        \begin{enumerate}
+          \item trivial embedding of sheaves on classical derived affines
+          with the countably presented faithfully flat topology.
+          \item Fully faithful embedding of adic spaces
+          \item Fully faithful embedding from complex analytic spaces
+          \item Betti stacks
+        \end{enumerate}
+    \end{enumerate}
+    \item Topics : GAGA theorems
+    \begin{enumerate}
+        \item non-Archimedean
+        \begin{enumerate}
+            \item solid analytification
+        \end{enumerate}
+        \item Archimedean
+        \begin{enumerate}
+            \item gaseous analytification
+        \end{enumerate}
+    \end{enumerate}
+    \item Topics : analytic de Rham stacks
+    \begin{enumerate}
+        \item complex analytic Riemann--Hilbert
+    \end{enumerate}
+    \item Topics : Norms and the gaseous base stack
 \end{enumerate}
 
 \end{document}
